@@ -1,0 +1,4 @@
+functionality:
+
+
+when click on the experiment page,it should show a dropdown button with two option english or hindi.then select language from there.then jumbled sentenced should appear.then there should be  clickable buttons pertaining to each word in the sentence. then there should be two option :check the sentence and reform the sentence ,by clicking on reform sentence will set again,and whereas evaluation of sentence is done by clicking on check on correctness of sentence.
