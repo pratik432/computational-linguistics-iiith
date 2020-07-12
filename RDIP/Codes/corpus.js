@@ -12,4 +12,14 @@ var json='{"English":['+'{"1":["John ate an apple before afternoon","before afte
     '{"6":["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"]},'+
     '{"7":["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है"," बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब"," है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"}]}';
      
-
+function selectlang(){
+    var x = document.getElementById("langselect").value;
+    document.getElementById('form_1').innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words."
+    document.getElementById('form_2').innerHTML="(select the buttons in proper order)"
+    console.log(x);
+    if(x == "null")
+    {
+        alert("Select Language");
+        return false;
+    }
+}
