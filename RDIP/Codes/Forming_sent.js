@@ -6,7 +6,7 @@ var wrd ="";
 var d;
 var ans = "";
 
-function selectlang(){
+
 var English_Sentence = 
 
 [["John ate an apple before afternoon",
@@ -91,6 +91,7 @@ var English_Sentence =
 "वहाँ है बड़ी सी एक किताब", 
 "है वहाँ एक बड़ी सी किताब", 
 "है वहाँ बड़ी सी एक किताब "]];
+    function selectlang(){
     val = document.getElementById('langselect').value;
     if(val == 'english'){
     wrd = "";
@@ -186,6 +187,9 @@ function form_sent(id,value){
   document.getElementById(id).style.display = "none";
   document.getElementById("form_4").innerHTML = "<button style='font-size:20px'; id='re' onclick='reform_sentence();'>Re-form the Sentence</button>";
   click ++;
+  if(click == button){
+    document.getElementById("form_5").innerHTML = "<button style='font-size:20px' id='crct' onclick='checksentence();'>Check the correctness of this sentence</button>";
+  }
  
 }
 
@@ -204,4 +208,20 @@ function reform_sentence(){
   click = 0;
   ans = "";
   
+}
+
+
+function checksentence(){
+  var e = wrd.trim();
+  var checksent;
+  if(val =='english'){
+    checksent = English_Sentence[d].includes(e);    
+  }
+  else if(val =='hindi'){
+    checksent = Hindi_Sentence[d].includes(e);
+  }
+  if(checksent)
+    document.getElementById("form_6").innerHTML = "<br><font color ='green';font size='20px'>Right Answer!!!</font>";
+  else
+    document.getElementById("form_6").innerHTML = "<br><font color ='red';font size='20px'>Wrong Answer!!!</font><br><br>";
 }
