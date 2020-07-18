@@ -223,5 +223,18 @@ function checksentence(){
   if(checksent)
     document.getElementById("form_6").innerHTML = "<br><font color ='green';font size='20px'>Right Answer!!!</font>";
   else
-    document.getElementById("form_6").innerHTML = "<br><font color ='red';font size='20px'>Wrong Answer!!!</font><br><br>";
+    document.getElementById("form_6").innerHTML = "<br><font color ='red';font size='20px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='getCorrect();'>Get Correct Sentence</button>";
+}
+
+
+
+
+function getCorrect(){
+  if(val == 'english'){
+    
+    document.getElementById("form_6").innerHTML = "<font color ='red'; fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' >Hide Correct Sentence</button><br><br>";
+    }
+   else if(val =='hindi'){
+  document.getElementById("form_6").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' >Hide Correct Sentence</button><br><br>";
+   }
 }
