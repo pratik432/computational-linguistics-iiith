@@ -123,7 +123,7 @@ var English_Sentence =
     var btns="";
     var content;
     button = 0;
-    cl = 0;
+    click = 0;
     for( var i=0;i<=wrds.length-1;i++){
       content = wrds[i];
       btns = "<button style='font-size:20px'; id='button"+i+"'onclick='form_sent(this.id,this.value)' value='"+content+"'>"+content+"</button>&nbsp;&nbsp;";
@@ -162,7 +162,7 @@ var English_Sentence =
     var btns="";
     var content;
     button = 0;
-    cl = 0;
+    click = 0;
     for(var i=0;i<=wrds.length-1;i++){
       content = wrds[i];
       btns = "<button style='font-size:20px' id='button"+i+"' onclick='form_sent(this.id,this.value)' value='"+content+"'>"+content+"</button> &nbsp;&nbsp;";
@@ -184,7 +184,24 @@ function form_sent(id,value){
   wrd += " ";
   document.getElementById("form_3").innerHTML = wrd;
   document.getElementById(id).style.display = "none";
-  document.getElementById("form_4").innerHTML = "<button style='font-size:20px'; id='re' oncl='reform();'>Re-form the Sentence</button>";
-  cl ++;
+  document.getElementById("form_4").innerHTML = "<button style='font-size:20px'; id='re' onclick='reform_sentence();'>Re-form the Sentence</button>";
+  click ++;
  
+}
+
+
+function reform_sentence(){
+  for(var i=0;i<=l;i++){
+    document.getElementById('button'+i).style.display = "";
+  }
+  wrd = "";
+  document.getElementById("form_3").innerHTML = wrd;
+  document.getElementById("form_4").innerHTML = "";
+  document.getElementById("form_2").innerHTML = "";
+  document.getElementById("form_5").innerHTML = "";
+  document.getElementById("form_6").innerHTML = "";
+  document.getElementById("form_7").innerHTML = "";
+  click = 0;
+  ans = "";
+  
 }
