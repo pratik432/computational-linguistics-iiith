@@ -221,20 +221,33 @@ function checksentence(){
     checksent = Hindi_Sentence[d].includes(e);
   }
   if(checksent)
-    document.getElementById("form_6").innerHTML = "<br><font color ='green';font size='20px'>Right Answer!!!</font>";
+    document.getElementById("form_6").innerHTML = "<br><font color ='green';font size='20px'>Right Answer!</font>";
   else
-    document.getElementById("form_6").innerHTML = "<br><font color ='red';font size='20px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='getCorrect();'>Get Correct Sentence</button>";
+    document.getElementById("form_6").innerHTML = "<br><font color ='red';font size='20px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct' onclick='getCorrect();'>Get Correct Sentence</button>";
 }
 
-
-
-
 function getCorrect(){
+  ans = "";
+  var num = 0;
   if(val == 'english'){
-    
-    document.getElementById("form_6").innerHTML = "<font color ='red'; fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' >Hide Correct Sentence</button><br><br>";
+    n = English_Sentence[d].length-1;
+    document.getElementById("form_6").innerHTML = "<font color ='red'; fone size='25px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct' onclick='hidebar();'>Hide Correct Sentence</button><br><br>";
+    for(var i=0;i<=n;i++){
+       ans += English_Sentence[d][i]+"<br>";
     }
-   else if(val =='hindi'){
-  document.getElementById("form_6").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' >Hide Correct Sentence</button><br><br>";
-   }
+    document.getElementById("form_7").innerHTML = "<br>"+"<font size='5px'>"+ans;+"</font>"
+  }
+  else if(val =='hindi'){
+    n = Hindi_Sentence[d].length-1;
+    document.getElementById("form_6").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct' onclick='hidebar();'>Hide Correct Sentence</button><br><br>";
+    for(var i=0;i<=n;i++){
+      ans += Hindi_Sentence[d][i]+"<br>";
+    }
+    document.getElementById("form_7").innerHTML = "<br>"+"<font size='5px'>"+ans;+"</font>"
+  }
+}
+
+function hidebar(){
+  document.getElementById("form_6").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct'>Get Correct Sentence</button><br><br><br>";
+  document.getElementById("form_7").style.display = "none";
 }
