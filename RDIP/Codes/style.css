@@ -1,20 +1,29 @@
 
-#form_1{
+#form{
 	color: #0000AA;
 	text-align: center;
-	font-style: bold;
-	font-size: 20px;
+	 font-family: bold;
+	font-size: 25px;
 	font-family: lucida grande;
 
 }
 
+#form_1{
+	font-size: 20px;
+	color:black;
+	font-family: "sans-serif";
+	
+}
 #form_2{
-	color: #0000ff;
-	text-align: center;
-	font-style: italic;
-	font-size: 16px;
-	width: 1024px;
-	padding-top: 0px
+	font-size: 20px;
+	color:black;
+	font-family: "sans-serif";
+	
+}
+#form_3{
+	font-size: 20px;
+	color:black;
+	font-family: "sans-serif";
 	
 }
 
@@ -24,3 +33,6 @@ select{
 	
 }
 
+p{
+	text-align: center;
+}
