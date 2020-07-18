@@ -103,7 +103,7 @@ var English_Sentence =
     document.getElementById("form_3").innerHTML = "";
     document.getElementById("form_4").innerHTML = "";
     document.getElementById("form_5").innerHTML = "";
-    document.getElementById("form").innerHTML = "<br><br><font color='darkblue'><b>Form a sentence (Declarative or Interrogative or any other type) from the given wrds</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
+    document.getElementById("form").innerHTML = "<br><br><font color='darkblue'><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
       d = Math.floor(Math.random() * 10);
     var sent_1 = English_Sentence[d][0];
     var wrds = sent_1.split(" ");
@@ -144,7 +144,7 @@ var English_Sentence =
     document.getElementById("form_2").innerHTML = "";
     document.getElementById("form_3").innerHTML = "";
     document.getElementById("form_4").innerHTML = "";
-    document.getElementById("form").innerHTML = "<br><br><font color=darkblue><b>Form a sentence (Declarative or Interrogative or any other type) from the given wrds</b></font><br><font color='blue'><i>(select the form_1 in proper order)</i></font>";
+    document.getElementById("form").innerHTML = "<br><br><font color=darkblue><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
       d = Math.floor(Math.random() * 7);
     var hsen = Hindi_Sentence[d][0];
     var wrds = hsen.split(" ");
@@ -180,7 +180,7 @@ else if(s="select"){
 
 
 function form_sent(id,value){
-  document.getElementById("form_2").innerHTML = "<font color='darkblue'><b>Formed Sentence</b></font><font color='blue'><i>(after selecting wrds)</i></font>:";
+  document.getElementById("form_2").innerHTML = "<font color='darkblue'><b>Formed Sentence</b></font><font color='blue'><i>(after selecting words)</i></font>:";
   wrd += value ;
   wrd += " ";
   document.getElementById("form_3").innerHTML = wrd;
@@ -248,6 +248,16 @@ function getCorrect(){
 }
 
 function hidebar(){
-  document.getElementById("form_6").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct'>Get Correct Sentence</button><br><br><br>";
+  document.getElementById("form_6").innerHTML = "<font color ='red';fone size='20px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct'onclick='multipletoggle();'>Get Correct Sentence</button><br><br><br>";
   document.getElementById("form_7").style.display = "none";
+}
+
+
+
+function multipletoggle(){
+  var j=document.getElementById("form_7")
+  if(j.style.display == 'none'){
+    j.style.display = "";
+    document.getElementById("form_6").innerHTML = "<font color ='red';font size='20px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='hidebar();'>Hide Correct Sentence</button>";
+  }
 }
