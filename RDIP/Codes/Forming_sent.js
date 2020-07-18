@@ -1,10 +1,10 @@
 
-var val;
-var l;
-var button, cl;
 var wrd ="";
 var d;
 var ans = "";
+var val;
+var button, cl;
+var l;
 
 
 var English_Sentence = 
@@ -12,6 +12,10 @@ var English_Sentence =
 [["John ate an apple before afternoon",
 "before afternoon John ate an apple", 
 "John before afternoon ate an apple "], 
+["the woman who called my sister sells cosmetics",
+"the woman who sells cosmetics called my sister",
+"my sister who sells cosmetics called the woman",
+"my sister who called the woman sells cosmetics "],
 ["some students like to study in the night",
 "at night some students like to study "], 
 ["John and Mary went to church", 
@@ -19,16 +23,6 @@ var English_Sentence =
 ["John went to church after eating", 
 "after eating John went to church", 
 "John after eating went to church "], 
-["did he go to market", 
-"he did go to market "], 
-["the woman who called my sister sells cosmetics",
-"the woman who sells cosmetics called my sister",
-"my sister who sells cosmetics called the woman",
-"my sister who called the woman sells cosmetics "],
-["John goes to the library and studies",
-"John studies and goes to the library "],
-["John ate an apple so did she",
-"she ate an apple so did John "],
 ["the teacher returned the book after she noticed the error", 
 "the teacher noticed the error after she returned the book",
 "after the teacher returned the book she noticed the error",
@@ -37,6 +31,12 @@ var English_Sentence =
 "she noticed the error after the teacher returned the book",
 "after she returned the book the teacher noticed the error",
 "after she noticed the error the teacher returned the book "],
+["did he go to market", 
+"he did go to market "], 
+["John goes to the library and studies",
+"John studies and goes to the library "],
+["John ate an apple so did she",
+"she ate an apple so did John "],
 ["I told her that I bought a book yesterday",
 "I told her yesterday that I bought a book", 
 "yesterday I told her that I bought a book", 
@@ -49,10 +49,6 @@ var English_Sentence =
 "राम और श्याम गयें बाजार", 
 "बाजार गयें राम और श्याम", 
 "गयें बाजार राम और श्याम "],
-["राम सोया और श्याम भी", 
-"श्याम सोया और राम भी", 
-"सोया श्याम और राम भी", 
-"सोया राम और श्याम भी "],
 ["मैंने उसे बताया कि राम सो रहा है",
 "मैंने उसे बताया कि सो रहा है राम",
 "उसे मैंने बताया कि राम सो रहा है",
@@ -71,6 +67,10 @@ var English_Sentence =
 "खाकर सोया राम",
 "सोया राम खाकर",
 "सोया खाकर राम "],
+["राम सोया और श्याम भी", 
+"श्याम सोया और राम भी", 
+"सोया श्याम और राम भी", 
+"सोया राम और श्याम भी "],
 ["बिल्लियों को मारकर कुत्ता सो गया",
 "मारकर बिल्लियों को कुत्ता सो गया",
 "बिल्लियों को मारकर सो गया कुत्ता", 
@@ -94,8 +94,8 @@ var English_Sentence =
     function selectlang(){
     val = document.getElementById('langselect').value;
     if(val == 'english'){
-    wrd = "";
     ans = "";
+    wrd = "";
     answr = "";
         document.getElementById("form_7").innerHTML = "";
     document.getElementById("form_6").innerHTML = "";
@@ -103,7 +103,7 @@ var English_Sentence =
     document.getElementById("form_3").innerHTML = "";
     document.getElementById("form_4").innerHTML = "";
     document.getElementById("form_5").innerHTML = "";
-    document.getElementById("form").innerHTML = "<br><br><font color='darkblue'><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
+    document.getElementById("form").innerHTML = "<br><br><font color=darkblue><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
       d = Math.floor(Math.random() * 10);
     var sent_1 = English_Sentence[d][0];
     var wrds = sent_1.split(" ");
@@ -120,25 +120,25 @@ var English_Sentence =
 
 
     
-    var finalbtns="";
-    var btns="";
-    var content;
-    button = 0;
+    var value;
     click = 0;
+    button = 0;
+    var s ="";
+    var btns="";
     for( var i=0;i<=wrds.length-1;i++){
-      content = wrds[i];
-      btns = "<button style='font-size:20px'; id='button"+i+"'onclick='form_sent(this.id,this.value)' value='"+content+"'>"+content+"</button>&nbsp;&nbsp;";
-      finalbtns += btns;
+      value = wrds[i];
+      btns = "<button style='font-size:20px'; id='button"+i+"'onclick='form_sent(this.id,this.value)' value='"+value+"'>"+value+"</button>&nbsp;&nbsp;";
+      s  += btns;
       button++;
     }
     
-    document.getElementById("form_1").innerHTML = finalbtns;
+    document.getElementById("form_1").innerHTML = s ;
     
     
   }
   else if(val == 'hindi'){
-    wrd = "";
     ans = "";
+    wrd = "";
     document.getElementById("form_7").innerHTML = "";
     document.getElementById("form_6").innerHTML = "";    
     document.getElementById("form_2").innerHTML = "";
@@ -159,19 +159,19 @@ var English_Sentence =
       wrds[x] = wrds[q];
       wrds[q] = temp;
     }
-    var finalbtns="";
+    var value;
     var btns="";
-    var content;
-    button = 0;
+    var s ="";
     click = 0;
+    button = 0;
     for(var i=0;i<=wrds.length-1;i++){
-      content = wrds[i];
-      btns = "<button style='font-size:20px' id='button"+i+"' onclick='form_sent(this.id,this.value)' value='"+content+"'>"+content+"</button> &nbsp;&nbsp;";
-      finalbtns += btns;
+      value = wrds[i];
+      btns = "<button style='font-size:20px' id='button"+i+"' onclick='form_sent(this.id,this.value)' value='"+value+"'>"+value+"</button> &nbsp;&nbsp;";
+      s  += btns;
       button++;
     }
     
-    document.getElementById("form_1").innerHTML = finalbtns;     
+    document.getElementById("form_1").innerHTML = s ;     
   }
 else if(s="select"){
   alert("Select langselect");
@@ -198,15 +198,15 @@ function reform_sentence(){
   for(var i=0;i<=l;i++){
     document.getElementById('button'+i).style.display = "";
   }
+  click = 0;
+  ans = "";
   wrd = "";
-  document.getElementById("form_3").innerHTML = wrd;
-  document.getElementById("form_4").innerHTML = "";
+  document.getElementById("form_7").innerHTML = "";
   document.getElementById("form_2").innerHTML = "";
   document.getElementById("form_5").innerHTML = "";
   document.getElementById("form_6").innerHTML = "";
-  document.getElementById("form_7").innerHTML = "";
-  click = 0;
-  ans = "";
+  document.getElementById("form_3").innerHTML = wrd;
+  document.getElementById("form_4").innerHTML = "";
   
 }
 
@@ -246,14 +246,6 @@ function getCorrect(){
     document.getElementById("form_7").innerHTML = "<br>"+"<font size='5px'>"+ans;+"</font>"
   }
 }
-
-function hidebar(){
-  document.getElementById("form_6").innerHTML = "<font color ='red';fone size='20px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct'onclick='multipletoggle();'>Get Correct Sentence</button><br><br><br>";
-  document.getElementById("form_7").style.display = "none";
-}
-
-
-
 function multipletoggle(){
   var j=document.getElementById("form_7")
   if(j.style.display == 'none'){
@@ -261,3 +253,10 @@ function multipletoggle(){
     document.getElementById("form_6").innerHTML = "<font color ='red';font size='20px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='hidebar();'>Hide Correct Sentence</button>";
   }
 }
+
+function hidebar(){
+  document.getElementById("form_6").innerHTML = "<font color ='red';fone size='20px'>Wrong Answer!</font><br><br><button style='font-size:20px' id='correct'onclick='multipletoggle();'>Get Correct Sentence</button><br><br><br>";
+  document.getElementById("form_7").style.display = "none";
+}
+
+
